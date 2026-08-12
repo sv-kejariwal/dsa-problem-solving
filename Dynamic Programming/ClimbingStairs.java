@@ -1,4 +1,6 @@
 public class ClimbingStairs {
+
+    //Recursion TC = 0(2^n)
     public static int calculateNumberOfWaysToClimbStairs(int stairs) {
         if (stairs == 0 || stairs == 1) {
             return 1;
@@ -7,6 +9,7 @@ public class ClimbingStairs {
         return calculateNumberOfWaysToClimbStairs(stairs-1) + calculateNumberOfWaysToClimbStairs(stairs - 2);
     }
 
+        // Use of Memoization. TC = O(n)
       public static int optimisedWay(int stairs, int[] dp) {
         if (stairs == 0 || stairs == 1) {
             return 1;
