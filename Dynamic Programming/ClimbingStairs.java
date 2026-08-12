@@ -8,7 +8,6 @@ public class ClimbingStairs {
     }
 
       public static int optimisedWay(int stairs, int[] dp) {
-        int noOfWays;
         if (stairs == 0 || stairs == 1) {
             return 1;
         }
@@ -17,8 +16,8 @@ public class ClimbingStairs {
             return dp[stairs];
         }
 
-        noOfWays = optimisedWay(stairs-1, dp) + optimisedWay(stairs - 2, dp);
-        return noOfWays;
+        dp[stairs] = optimisedWay(stairs-1, dp) + optimisedWay(stairs - 2, dp);
+        return dp[stairs];
     }
     public static void main(String[] args) {
         int stairs = 3;
